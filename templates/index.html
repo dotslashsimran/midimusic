@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HuePhonic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Desktop Icons -->
+  <div class="desktop-icons">
+    <div class="icon">
+      <img src="../static/icons/github.webp" alt="Minesweeper" />
+      <span>github</span>
+    </div>
+  </div>
+
+  <!-- App Windows -->
+  <div class="main-container">
+
+    <!-- iPod Window -->
+    <div class="ipod-window">
+      <div class="window-header">
+        <span class="window-title">iPod</span>
+        <div class="window-buttons">
+          <span class="win-btn close">×</span>
+        </div>
+      </div>
+
+      <div class="ipod-player">
+        <div class="ipod-screen">
+          <canvas id="canvas" width="200" height="200"></canvas>
+        </div>
+
+        <div class="ipod-wheel">
+          <div class="ipod-menu">MENU</div>
+          <div class="ipod-controls">
+            <span class="control back">⏪</span>
+            <span class="control play">▶️</span>
+            <span class="control next">⏩</span>
+          </div>
+        </div>
+
+        <audio id="player" preload="none"></audio>
+      </div>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="controls-window">
+      <div class="window-header">
+        <span class="window-title">@HuePhonic</span>
+        <div class="window-buttons">
+          <span class="win-btn close">×</span>
+        </div>
+      </div>
+
+      <div class="window-body">
+        <div class="chat-message bot">
+          <strong>Playing HuePhonic</strong><br>
+          basically it analyzes pixel hues and brightness of your drawing, maps them to instruments and rhythms in a multi-track MIDI, and renders it into audio using FluidSynth with a custom SoundFont.
+        </div>
+
+        <div class="chat-message user">
+          <label for="color">Pick a color:</label>
+          <input type="color" id="color" class="color-large" value="#000000">
+          <div class="swatch-bar">
+            <div class="swatch" style="background: #000000;" data-color="#000000"></div>
+            <div class="swatch" style="background: #e4572e;" data-color="#e4572e"></div>
+            <div class="swatch" style="background: #ffc914;" data-color="#ffc914"></div>
+            <div class="swatch" style="background: #76b041;" data-color="#76b041"></div>
+            <div class="swatch" style="background: #4d90fe;" data-color="#4d90fe"></div>
+            <div class="swatch" style="background: #aa66cc;" data-color="#aa66cc"></div>
+          </div>
+        </div>
+
+        <div class="chat-message user">
+          <label for="size">Brush size:</label>
+          <input type="range" id="size" min="1" max="20" value="4">
+        </div>
+
+        <div class="chat-message user">
+          <div class="button-group">
+            <button onclick="clearCanvas()">Clear</button>
+            <button onclick="generateMusic()">Generate Music</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="window-input">
+        <input type="text" disabled placeholder="Type or push 'space' to talk..." />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="start">Start</div>
+    <div class="taskbar-items">
+      <span>HuePhonic</span>
+    </div>
+    <div class="clock">4:20 PM</div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: url('wallpapers/winxp.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .desktop-icons {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+  }
+  
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 3px black;
+    width: 60px;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+  
+  .icon img {
+    width: 68px;
+    height: 68px;
+  }
+  
+
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.85rem;
+    padding: 0 15px;
+    z-index: 1000;
+    box-shadow: 0 -1px 3px rgba(0,0,0,0.4);
+  }
+  
+  .start {
+    background: #0078d7;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .taskbar-items span {
+    margin-right: 15px;
+  }
+  
+  .clock {
+    font-family: monospace;
+  }
+  
+  .ipod-window, .controls-window {
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .window-header {
+    background: #dcdcdc;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+  }
+  
+  .window-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .window-buttons .win-btn {
+    background: #f66;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .ipod-window {
+    width: 280px;
+  }
+  
+  .ipod-player {
+    background: linear-gradient(to bottom right, #2e2e2e, #111);
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .ipod-screen {
+    background: #222;
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ipod-screen canvas {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
+  .ipod-wheel {
+    background: #000;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ipod-menu {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+  
+  .ipod-controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 15px;
+  }
+  
+  .control {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .control.play {
+    font-size: 1.5rem;
+  }
+  
+  .controls-window {
+    width: 320px;
+  }
+  
+  .window-body {
+    padding: 12px;
+    background: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 420px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border-left: 3px solid #999;
+    background: #fafafa;
+  }
+  
+  .chat-message.bot {
+    border-left-color: #4a90e2;
+    background: #e9f1ff;
+  }
+  
+  .chat-message.user {
+    border-left-color: #bbb;
+    background: #fff;
+  }
+  
+  .chat-message label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .window-input {
+    border-top: 1px solid #ccc;
+    background: #eaeaea;
+    padding: 10px;
+  }
+  
+  .window-input input[type="text"] {
+    width: 100%;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    background: #fff;
+    color: #666;
+    font-family: inherit;
+  }
+  
+  .color-large {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.06);
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .swatch-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .swatch:hover {
+    transform: scale(1.15);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  button {
+    background: #a68bd5;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  button:hover {
+    background: #9371c1;
+  }
+  
+  @media (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .ipod-window,
+    .controls-window {
+      width: 90%;
+    }
+  }
